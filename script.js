@@ -1,25 +1,13 @@
-function createTable() {
+function insert_Row() {
     //Write your code here
-   const rowNum = prompt("Input number of rows");
-  const colNum = prompt("Input number of columns");
+  var table = document.getElementById("sampleTable");
+  var newRow = table.insertRow(0);
 
-  // Convert the input values to integers
-  const numRows = parseInt(rowNum);
-  const numCols = parseInt(colNum);
+  // Insert cells into the new row
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(1);
 
-  if (!isNaN(numRows) && !isNaN(numCols)) {
-    const table = document.getElementById("myTable");
-    table.innerHTML = ""; // Clear any existing content in the table
-
-    // Create the table rows and cells
-    for (let i = 0; i < numRows; i++) {
-      const row = table.insertRow(i);
-      for (let j = 0; j < numCols; j++) {
-        const cell = row.insertCell(j);
-        cell.textContent = `Row-${i} Column-${j}`;
-      }
-    }
-  } else {
-    alert("Please enter valid numbers for rows and columns.");
-  }
+  // Set content for the cells (e.g., text or elements)
+  cell1.innerHTML = "New Cell1";
+  cell2.innerHTML = "New Cell2";
 }
